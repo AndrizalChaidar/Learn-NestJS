@@ -7,7 +7,4 @@ export default class Song {
 
   @Column({ name: 'song_name' })
   songName: string;
-
-  @Column({ nullable: true, name: 'file_url' })
-  fileUrl: string;
 }

@@ -1,6 +1,6 @@
-import { PartialType } from '@nestjs/mapped-types';
 import { CreateSongDto } from './create-song.dto';
+import { FindOneSongDto } from './find-one-song.dto';
 
-export class UpdateSongDto extends PartialType(CreateSongDto) {
-  fileUrl?: string;
+export class UpdateSongDto extends FindOneSongDto {
+  payload: CreateSongDto;
 }

@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { SongsService } from './songs.service';
 import { SongsController } from './songs.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
+import { MinioMusicModule } from 'src/minio/minio.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         },
       ],
     }),
+    MinioMusicModule,
   ],
   controllers: [SongsController],
   providers: [SongsService],
