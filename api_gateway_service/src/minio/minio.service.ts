@@ -42,7 +42,6 @@ export class MinioMusicService {
 
     return result;
   }
-
   async play(objectName: string) {
     let headers: Record<string, any> = {};
     const range = this.request.headers.range;

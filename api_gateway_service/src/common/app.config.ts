@@ -1,4 +1,4 @@
-import { ConfigModuleOptions, ConfigService } from '@nestjs/config';
+import { ConfigModuleOptions } from '@nestjs/config';
 
 export default class AppConfig {
   static getConfigModuleOptions(): ConfigModuleOptions {

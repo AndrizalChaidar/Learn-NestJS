@@ -4,7 +4,6 @@ import { UpdateSongDto } from './dto/update-song.dto';
 import { DeleteQueryBuilder, Repository, UpdateQueryBuilder } from 'typeorm';
 import Song from 'src/entities/songs.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { plainToInstance } from 'class-transformer';
 
 @Injectable()
 export class SongsService {
@@ -36,7 +35,7 @@ export class SongsService {
       'id',
       `song_name AS "songName"`,
     ]);
-    let result = await this.songRepository.query(sql, parameters);
+    const result = await this.songRepository.query(sql, parameters);
     return result[0][0];
   }
 
@@ -49,7 +48,7 @@ export class SongsService {
       'id',
       `song_name AS "songName"`,
     ]);
-    let result = await this.songRepository.query(sql, parameters);
+    const result = await this.songRepository.query(sql, parameters);
     return result[0][0];
   }
   addReturningWithAlias(

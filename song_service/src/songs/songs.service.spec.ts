@@ -3,6 +3,8 @@ import { SongsService } from './songs.service';
 
 describe('SongsService', () => {
   let service: SongsService;
+  const a = { b: 1, c: () => {} };
+  jest.mocked(a).b;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
